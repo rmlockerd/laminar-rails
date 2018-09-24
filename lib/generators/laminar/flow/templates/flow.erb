@@ -1,0 +1,17 @@
+class <%= class_name %>
+  include Laminar::Flow
+
+  <%- if particles.any? -%>
+    flow do
+      <%- particles.each do |p| -%>
+        step :<%= p %>
+      <%- end -%>
+    end
+  <%- else -%>
+    #   flow do
+    #     step :first
+    #     step :then_me
+    #     step :last_step
+    #   end
+  <%- end -%>
+end

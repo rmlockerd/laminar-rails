@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Laminar
-  # Generator for new particles.
-  class ParticleGenerator < CommonGenerator
-  end
+require_relative '../common_generator'
+
+# Generator for new particles.
+class Laminar::ParticleGenerator < Rails::Generators::NamedBase
 end

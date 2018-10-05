@@ -1,8 +1,6 @@
-# Laminar::Rails
+# Laminar on Rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/laminar/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Adds Rails support to the Laminar workflow gem.
 
 ## Installation
 
@@ -22,13 +20,63 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Laminar-Rails adds a couple of generators to facilitate the creation of
+new Laminar particles and flows.
 
-## Development
+```
+$ rails generate laminar:particle foo
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+The generator adds a file ``app/flows/foo.rb``:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+class Foo
+  include Laminar::Particle
+
+  def call
+    # TODO
+  end
+end
+```
+
+The generator also adds a matching ``spec/flows/foo_spec.rb``.
+
+There is also a flow generator:
+
+```
+$ rails generate laminar:flow foo
+```
+
+that creates a flow template:
+
+```ruby
+class Foo
+  include Laminar::Flow
+
+  # flow do
+    # step :step1
+    # step :step2
+  # end
+end
+```
+
+You can specify particle names on the generator command line.
+```
+$ rails generate laminar:flow foo something something_else
+```
+
+will create a new flow pre-populated with steps:
+
+```ruby
+class Foo
+  include Laminar::Flow
+
+  flow do
+    step :something
+    step :something_else
+  end
+end
+```
 
 ## Contributing
 

@@ -22,7 +22,7 @@ module Laminar
         path = "spec/flows/#{name}_spec.rb"
         expect(path).to be_an_existing_file
         expect(path).to have_file_content(
-          /RSpec.describe #{name.camelize}, type: :#{type}/
+          /RSpec.describe #{name.camelize}, type: :particle/
         )
       end
     end

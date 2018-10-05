@@ -9,18 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Robert Lockerd"]
   spec.email         = ["rmlockerd@gmail.com"]
 
-  spec.summary       = %q{Supports laminar gem for Rails applications.}
+  spec.summary       = %q{Laminar gem support for Rails applications.}
   spec.homepage      = "https://github.com/rmlockerd/laminar-rails"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -32,11 +23,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'rails', ">= 4.2", "< 5.3"
-  # TODO: uncomment once gem is published
-  # spec.add_dependency 'laminar'
+  spec.add_dependency 'laminar', "~> 0.3"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "aruba", "~> 0.14"
+  spec.add_development_dependency 'simplecov', '~> 0.16'
 end

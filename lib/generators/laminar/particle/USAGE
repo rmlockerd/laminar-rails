@@ -2,7 +2,8 @@ Description:
     Explain the generator
 
 Example:
-    rails generate particle Thing
+    rails generate laminar:particle Thing
 
     This will create:
-        what/will/it/create
+        app/flows/thing.rb
+        spec/flows/thing_spec.rb

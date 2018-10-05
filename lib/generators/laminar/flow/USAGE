@@ -2,7 +2,8 @@ Description:
     Explain the generator
 
 Example:
-    rails generate flow Thing
+    rails generate laminar:flow Thing
 
     This will create:
-        what/will/it/create
+        app/flows/thing.rb
+        spec/flows/thing_spec.rb

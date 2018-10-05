@@ -2,6 +2,6 @@
 
 module Laminar
   # Generator for new particles.
-  class ParticleGenerator < CommonGenerator
+  class CommonGenerator < Rails::Generators::NamedBase
   end
 end

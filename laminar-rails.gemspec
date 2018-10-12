@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'rails', ">= 4.2", "< 5.3"
-  spec.add_dependency 'laminar', "~> 0.3"
+  spec.add_dependency 'laminar', "~> 0.4"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"

@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/rmlockerd/laminar-rails.svg?branch=master)](https://travis-ci.org/rmlockerd/laminar-rails)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
-Adds Rails support to the Laminar workflow gem. Laminar Rails supports Ruby MRI versions 2.3+ and rails 4.2 - 5.2.
+Adds Rails support to the Laminar workflow gem. Laminar Rails supports Ruby MRI versions 2.3+ and rails 4.2 - 6.0.
 
 ## Installation
 

@@ -6,7 +6,7 @@ module Laminar
 
     def self.test_file_creation(type, name)
       it 'creates a class file and spec' do
-        run_simple "bundle exec rails generate laminar:#{type} #{name}"
+        run_command_and_stop "bundle exec rails generate laminar:#{type} #{name}"
         path = "app/flows/#{name}.rb"
         expect(path).to be_an_existing_file
         expect(path).to have_file_content(/class #{name.camelize}/)
@@ -33,7 +33,7 @@ module Laminar
 
     context 'when generating a particle' do
       it 'requires a name' do
-        run_simple 'bundle exec rails generate laminar:particle'
+        run_command_and_stop 'bundle exec rails generate laminar:particle'
         expect(last_command_started.stdout).to include('rails generate laminar:particle NAME')
       end
 
@@ -48,7 +48,7 @@ module Laminar
 
     context 'when generating a flow' do
       it 'requires a name' do
-        run_simple 'bundle exec rails generate laminar:flow'
+        run_command_and_stop 'bundle exec rails generate laminar:flow'
         expect(last_command_started.stdout).to include('rails generate laminar:flow NAME')
       end
 
@@ -61,7 +61,7 @@ module Laminar
       end
 
       it 'takes a list of particles' do
-        run_simple 'bundle exec rails generate laminar:flow fill_cavity '\
+        run_command_and_stop 'bundle exec rails generate laminar:flow fill_cavity '\
           'numb_mouth, drill_tooth, fill_tooth'
         path = "app/flows/fill_cavity.rb"
         expect(path).to have_file_content(/flow do/)

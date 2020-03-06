@@ -1,6 +1,6 @@
 module Helpers
   def create_test_app
-    run_simple <<-BLOCK
+    run_command_and_stop <<-BLOCK
       bundle exec rails new test_app \
         --skip-yarn \
         --skip-gemfile \
@@ -28,6 +28,6 @@ module Helpers
       gem "rails"
       gem "laminar-rails", path: "#{GEM_TOP}"
       EOF
-    run_simple 'bundle install'
+    run_command_and_stop 'bundle install'
   end
 end
